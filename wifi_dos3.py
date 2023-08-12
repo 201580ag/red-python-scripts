@@ -198,3 +198,9 @@ try:
 except KeyboardInterrupt:
     print("Done!")
 # User will need to use control-c to break the script.
+    print("Stop authentication requests and end the monitor mode.")
+
+# Restart the network service.
+subprocess.run(["sudo", "systemctl", "start", "NetworkManager.service"])
+
+print("Done!")
