@@ -128,7 +128,7 @@ subprocess.run(["ip", "link", "set", hacknic, "up"])
 # The output is an open file that can be accessed by other programs.
 # We run the iwconfig command to look for wireless interfaces.
 # Discover access points
-discover_access_points = subprocess.Popen(["sudo", "airodump-ng","-w" ,"file","--write-interval", "1","--output-format", "csv", hacknic], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+discover_access_points = subprocess.Popen(["sudo", "airodump-ng","-w" ,"file","--write-interval", "1","--output-format", "csv", "--band", "abg", hacknic], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
 # Loop that shows the wireless access points. We use a try except block and we will quit the loop by pressing ctrl-c.
 try:
